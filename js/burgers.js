@@ -118,3 +118,4 @@ my_products = new Products()
 my_order = new Order(my_products.productSelection())
 alert(`Итоговая цена: ${my_order.getPrice()}\n
 Количество калорий: ${my_order.getCalories()}`)
+window.history.back();
