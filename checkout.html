@@ -6,8 +6,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/fontello.css">
-    <link rel="stylesheet" href="sass/style.css?ver=32" type="text/css">
+    <link rel="stylesheet" href="sass/style.css?ver=33" type="text/css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
 </head>
 <body>
     <div class="wrapper">
@@ -43,32 +44,7 @@
                         </form>
                     </div>
                     <div class="header-right">
-                        <div class="cart">
-                            <a href="#"><img src="img/cart.svg" alt="cart"><div class="cart-circle-five">5</div></a>
-                            <form class="cart-box">
-                                <div class="cart-flex">
-                                    <img src="img/cart-boy.jpg" alt="cart-boy">
-                                    <div class="rebox-zane">
-                                        <p>REBOX ZANE</p>
-                                        <p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half-alt"></i></p>
-                                        <p>1 x $250</p>
-                                        <p><a class="icon-cancel-circled" href="#"></a></p>
-                                    </div>
-                                </div>
-                                <div class="cart-flex">
-                                    <img src="img/cart-girl.jpg" alt="cart-boy">
-                                    <div class="rebox-zane">
-                                        <p>REBOX ZANE</p>
-                                        <p><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half-alt"></i></p>
-                                        <p>1 x $250</p>
-                                        <p><a class="icon-cancel-circled" href="#"></a></p>
-                                    </div>
-                                </div>
-                                <div class="total"><p>TOTAL</p><p>500$</p></div>
-                                <button class="cart-button-checkout">CHECKOUT</button>
-                                <button class="cart-button-go-to-cart">GO TO CART</button>
-                            </form>
-                        </div>
+                        <div class="cart"></div>
                         <a class="button" href="#">My Account <img src="img/down-arrov.png" alt=""></a>
                     </div>
                 </div>
@@ -237,6 +213,7 @@
                     </div>
                 </form>
             </section>
+            <div class="container" id="reviews"></div>
             <div class="subscribe-box">
                 <div class="subscribe-background"></div>
                 <div class="subscribe-flex container">
@@ -328,6 +305,12 @@
                 </div>
             </div>
         </footer>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script src="js/main.js"></script>
+<!--        <script src="js/Cart.js"></script>-->
+<!--        <script src="js/Reviews.js"></script>-->
+<!--        <script src="js/main.js"></script>-->
     </div>
 </body>
 </html>

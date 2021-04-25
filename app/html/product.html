@@ -5,10 +5,10 @@
     <title>THE BRAND</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
     <link rel="stylesheet" href="css/fontello.css">
-    <link rel="stylesheet" href="sass/style.css?ver=33" type="text/css">
+    <link rel="stylesheet" href="sass/style.css?ver=32" type="text/css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
 </head>
 <body>
     <div class="wrapper">
@@ -251,14 +251,8 @@
                             </div>
                             <div class="new-arrivals-price">
                                 <h3>PRICE</h3>
-                                <!--<a href="#"><div class="new-arrivals-price-range"><div></div></div></a>-->
-
-                                <div id="slider-range" ></div>
-                                <!--<div><p>$52</p><p>$400</p></div>-->
-                                <p>
-                                    <label for="amount"></label>
-                                    <input type="text" id="amount" readonly style="border:0;">
-                                </p>
+                                <a href="#"><div class="new-arrivals-price-range"><div></div></div></a>
+                                <div><p>$52</p><p>$400</p></div>
                             </div>
                         </div>
                         <div class="new-arrivals-sort">
@@ -638,25 +632,9 @@
         </footer>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script src="js/Cart.js"></script>
+        <script src="js/Reviews.js"></script>
         <script src="js/main.js"></script>
-<!--        <script src="js/Cart.js"></script>-->
-<!--        <script src="js/Reviews.js"></script>-->
-<!--        <script src="js/main.js"></script>-->
-        //Ползунок jQuery UI Slider
-        <script>
-          $(function() {
-            $("#slider-range").slider({
-              range: true,
-              min: 0,
-              max: 700,
-              values: [52, 400],
-              slide: function(event, ui) {
-                $('#amount').val(`$${ui.values[0]}                                                             $${ui.values[1]}`);
-              }
-            });
-            $('#amount').val(`$${$('#slider-range').slider('values', 0)}                                                             $${$('#slider-range').slider('values', 1)}`);
-          } );
-        </script>
     </div>
 </body>
 </html>
