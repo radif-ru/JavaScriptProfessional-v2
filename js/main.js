@@ -6,27 +6,28 @@
 // };
 
 class Goods {
-    constructor(price, name) {
-        this.price = price;
+    constructor(id, name, price, img_src, img_alt, quantity = 10) {
+        this.id = id;
         this.name = name;
-        // this.color = color;
-        // this.size = size;
+        this.price = price;
+        this.img_src = img_src;
+        this.img_alt = img_alt;
 
-        this.store = 10;
+        this.quantity = quantity;
         this.element = undefined;
     }
 
     buy(count = 1) {
-        this.store -= count;
+        this.quantity -= count;
     }
 
     getHtml() {
         return `
        <div class="parent-product">
             <a class="product" href="shopping-cart.html">
-                <img src="img/product-1.jpg" alt="product-1">
+                <img src="${this.img_src}" alt="${this.img_alt}">
                 <p class="description-product">${this.name}</p>
-                <p class="price">$${this.price}</p>
+                <p class="price">$${this.price}.00</p>
             </a>
             <div class="product-link-flex">
                 <a class="add-to-cart buyBtn" href="#">
@@ -48,8 +49,8 @@ class Goods {
         item.appendChild(a_prod);
 
         const img = document.createElement('img');
-        img.src = 'img/product-1.jpg';
-        img.alt = 'product-1';
+        img.src = `${this.img_src}`;
+        img.alt = `${this.img_alt}`;
         a_prod.appendChild(img);
 
         const p_description = document.createElement('p');
@@ -59,7 +60,7 @@ class Goods {
 
         const p_price = document.createElement('p');
         p_price.classList.add('price');
-        p_price.innerText = `$${this.price}`;
+        p_price.innerText = `$${this.price}.00`;
         a_prod.appendChild(p_price);
 
 
@@ -77,7 +78,7 @@ class Goods {
         img_add.alt = 'cart-white';
         a_add.appendChild(img_add);
 
-        a_add.insertAdjacentText('beforeend','Add to Cart');
+        a_add.insertAdjacentText('beforeend', 'Add to Cart');
 
         this.element = item;
 
@@ -85,11 +86,21 @@ class Goods {
     }
 }
 
-const product_box = document.getElementById('product-box');
+class Clothes extends Goods {
+    constructor(id, name, price, img_src, img_alt, quantity, color, size = 'M') {
+        super(id, name, price, img_src, img_alt, quantity);
 
-const func = () => {
+        this.color = color;
+        this.size = size;
+    }
+}
+
+const product_box = document.getElementById('product-box');
+const products_href = "https://raw.gidasdthubusercontent.com/radif-ru/JavaScriptProfessional-v2/master/responses/catalogData.json"
+
+const fetch_func = (err_counter = 5) => {
     fetch(
-        'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json',
+        products_href,
         {
             method: 'GET',
             headers: {},
@@ -103,24 +114,25 @@ const func = () => {
         console.log('json res', res);
         let arr = [];
         for (let i of res) {
-            const item = new Goods(i.price, i.product_name);
+            const item = new Goods(i.id, i.product_name, i.price,
+                i.img_src, i.img_alt, i.quantity);
             product_box.appendChild(item.render());
             arr.push(item);
         }
-
-
     }).catch(error => {
-        setTimeout(
-            () => {
-                console.log('catch error!', error);
-                func();
-            },
-            5000
-        );
+        if (err_counter > 0) {
+            setTimeout(
+                () => {
+                    console.log('catch error!', error);
+                    fetch_func(err_counter -= 1);
+                },
+                3000
+            );
+        }
     });
 };
 
- func();
+fetch_func();
 
 
 class Cart {

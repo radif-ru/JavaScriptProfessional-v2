@@ -10,6 +10,7 @@
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   },
   {
@@ -17,12 +18,14 @@
     "product_name": "MANGO PEOPLE T-SHIRT",
     "price": 52,
     "size": "",
+    "color": "",
     "img_src": "img/product-2.jpg",
     "img_alt": "product-2",
     "popularity": "",
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   },
   {
@@ -30,12 +33,14 @@
     "product_name": "MANGO PEOPLE T-SHIRT",
     "price": 52,
     "size": "",
+    "color": "",
     "img_src": "img/product-3.jpg",
     "img_alt": "product-3",
     "popularity": "",
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   },
   {
@@ -43,12 +48,14 @@
     "product_name": "MANGO PEOPLE T-SHIRT",
     "price": 52,
     "size": "",
+    "color": "",
     "img_src": "img/product-4.jpg",
     "img_alt": "product-4",
     "popularity": "",
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   },
   {
@@ -56,12 +63,14 @@
     "product_name": "MANGO PEOPLE T-SHIRT",
     "price": 52,
     "size": "",
+    "color": "",
     "img_src": "img/product-5.jpg",
     "img_alt": "product-5",
     "popularity": "",
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   },
   {
@@ -69,12 +78,14 @@
     "product_name": "MANGO PEOPLE T-SHIRT",
     "price": 52,
     "size": "",
+    "color": "",
     "img_src": "img/product-6.jpg",
     "img_alt": "product-6",
     "popularity": "",
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   },
   {
@@ -82,12 +93,14 @@
     "product_name": "MANGO PEOPLE T-SHIRT",
     "price": 52,
     "size": "",
+    "color": "",
     "img_src": "img/product-7.jpg",
     "img_alt": "product-7",
     "popularity": "",
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   },
   {
@@ -95,12 +108,14 @@
     "product_name": "MANGO PEOPLE T-SHIRT",
     "price": 52,
     "size": "",
+    "color": "",
     "img_src": "img/product-8.jpg",
     "img_alt": "product-8",
     "popularity": "",
     "category": "",
     "brand": "",
     "designer": "",
+    "quantity": 10,
     "date added": ""
   }
 ]
