@@ -95,45 +95,61 @@ class Clothes extends Goods {
     }
 }
 
-const product_box = document.getElementById('product-box');
-const products_href = "https://raw.gidasdthubusercontent.com/radif-ru/JavaScriptProfessional-v2/master/responses/catalogData.json"
+class GoodsList {
+    constructor(
+        product_box = document.getElementById('product-box'),
+        products_href = "https://raw.githubusercontent.com/radif-ru/JavaScriptProfessional-v2/master/responses/catalogData.json"
+    ) {
+        this.product_box = product_box;
+        this.products_href = products_href;
+        this.goods_arr = [];
+        this.filter_goods = [];
+    }
 
-const fetch_func = (err_counter = 5) => {
-    fetch(
-        products_href,
-        {
-            method: 'GET',
-            headers: {},
-            // body: ''
-        }
-    ).then(res => {
-        console.log('fetch', res);
-        // throw new Error('For test');
-        return res.json();
-    }).then(res => {
-        console.log('json res', res);
-        let arr = [];
-        for (let i of res) {
-            const item = new Goods(i.id, i.product_name, i.price,
-                i.img_src, i.img_alt, i.quantity);
-            product_box.appendChild(item.render());
-            arr.push(item);
-        }
-    }).catch(error => {
-        if (err_counter > 0) {
-            setTimeout(
-                () => {
-                    console.log('catch error!', error);
-                    fetch_func(err_counter -= 1);
-                },
-                3000
-            );
-        }
-    });
-};
+    fetchFunc = (err_counter = 5) => {
+        fetch(
+            this.products_href,
+            {
+                method: 'GET',
+                headers: {},
+                // body: ''
+            }
+        ).then(res => {
+            console.log('fetch', res);
+            // throw new Error('For test');
+            return res.json();
+        }).then(res => {
+            console.log('json res', res);
+            for (let i of res) {
+                const item = new Goods(i.id, i.product_name, i.price,
+                    i.img_src, i.img_alt, i.quantity);
+                this.product_box.appendChild(item.render());
+                this.goods_arr.push(item);
+            }
+        }).catch(error => {
+            if (err_counter > 0) {
+                setTimeout(
+                    () => {
+                        console.log('catch error!', error);
+                        this.fetchFunc(err_counter -= 1);
+                    },
+                    3000
+                );
+            }
+        });
+    };
 
-fetch_func();
+    filterGoods (value) {
+        const regexp = new RegExp(value, 'gmi');
+        this.filter_goods = this.goods_arr.filter(good => regexp.test(good.name));
+        console.log(`filter_goods ${this.filter_goods}`);
+        console.log(`goods_arr ${this.goods_arr}`);
+    }
+}
 
+goods_list = new GoodsList()
+goods_list.fetchFunc()
+goods_list.filterGoods('MANGO');
 
 class Cart {
     constructor() {
