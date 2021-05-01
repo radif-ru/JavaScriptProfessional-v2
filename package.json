@@ -1,28 +1,23 @@
 {
-  "name": "radif-ilaltdinov",
+  "name": "javascriptprofessional-v2",
   "version": "1.0.0",
-  "description": "",
+  "description": "radif.ru",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radif-ru/JavaScriptProfessional-v2.git"
+  },
+  "author": "radif.ru",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radif-ru/JavaScriptProfessional-v2/issues"
+  },
+  "homepage": "https://github.com/radif-ru/JavaScriptProfessional-v2#readme",
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "browser-sync": "^2.26.3",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-babel": "^8.0.0-beta.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^3.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-pug": "^4.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglifyes": "^0.2.1",
-    "pug": "^2.0.3"
+    "express": "^4.17.1"
   }
 }
