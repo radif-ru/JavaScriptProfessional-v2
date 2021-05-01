@@ -11,8 +11,8 @@
     <!--    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">-->
 </head>
 <body>
-<div class="wrapper">
-    <div class="content" id="root">
+<div class="wrapper" id="root">
+    <div class="content">
         <header class="header">
             <div class="container header-flex">
                 <div class="header-left">
@@ -331,21 +331,22 @@
             <div class="product-box" id="product-box">
                 <!--генерация из js-->
                 <div v-if="goods.length === 0">Данные не получены</div>
-                <div class="parent-product" v-for="(product, id) in filter_goods"
-                     :key="`product_${id}`">
-                    <a class="product" href="shopping-cart.html">
-                        <img :src="product.img_src" :alt="product.img_alt">
-                        <p class="description-product">{{ product.product_name
-                            }}</p>
-                        <p class="price">${{ product.price }}.00</p>
-                    </a>
-                    <div class="product-link-flex">
-                        <a class="add-to-cart buyBtn" href="#">
-                            <img src="img/cart-white.svg" alt="cart-white">
-                            Add to Cart
-                        </a>
-                    </div>
-                </div>
+                <goods-list :goods="goods"></goods-list>
+                <!--                <div class="parent-product" v-for="(product, id) in goods"-->
+                <!--                     :key="`product_${id}`">-->
+                <!--                    <a class="product" href="shopping-cart.html">-->
+                <!--                        <img :src="product.img_src" :alt="product.img_alt">-->
+                <!--                        <p class="description-product">-->
+                <!--                            {{ product.product_name }}</p>-->
+                <!--                        <p class="price">${{ product.price }}.00</p>-->
+                <!--                    </a>-->
+                <!--                    <div class="product-link-flex">-->
+                <!--                        <a class="add-to-cart buyBtn" href="#">-->
+                <!--                            <img src="img/cart-white.svg" alt="cart-white">-->
+                <!--                            Add to Cart-->
+                <!--                        </a>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
 
             <div class="browse-all">
@@ -500,15 +501,15 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <!--        <script src="js/main.js"></script>-->
-    <script src="js/vue_main.js"></script>
-
-    <!--        <script src="bower_components/jquery/dist/jquery.min.js"></script>-->
-    <!--        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>-->
-    <!--        <script src="js/Cart.js"></script>-->
-    <!--        <script src="js/Reviews.js"></script>-->
-    <!--        <script src="js/main.js"></script>-->
 </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--        <script src="js/main.js"></script>-->
+<script src="js/vue_main.js"></script>
+
+<!--        <script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<!--        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>-->
+<!--        <script src="js/Cart.js"></script>-->
+<!--        <script src="js/Reviews.js"></script>-->
+<!--        <script src="js/main.js"></script>-->
 </body>
 </html>
