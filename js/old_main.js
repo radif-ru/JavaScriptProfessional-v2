@@ -1,9 +1,5 @@
 function old_main_js() {
     $(document).ready(() => {
-
-        //Покупка товаров перетаскиванием
-        dragAndDrop();
-
         //Корзина, shopping-cart, модули jQuery UI: автозаполнение в search, перетаскивание Drag and Drop
         let cart = new Cart('responses/getCart.json');
 
@@ -11,6 +7,22 @@ function old_main_js() {
         $('.buyBtn').click(e => {
             cart.addProduct(e.currentTarget);
         });
+
+        //Покупка товаров перетаскиванием //jQuery UI
+        $('.parent-product, .buyBtn').draggable({
+            revert: true
+        });
+
+        // $('.header-flex').droppable({
+        $('.fixed-top').droppable({
+            drop: (event, ui) => {
+                if (ui.draggable.find('.buyBtn').length === 0) {
+                    cart.addProduct(ui.draggable)
+                } else {
+                    cart.addProduct(ui.draggable.find('.buyBtn'))
+                }
+            }
+        })
 
         //Модуль отзывов
         let reviews = new Reviews('responses/feedback.json');
