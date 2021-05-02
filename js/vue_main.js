@@ -288,7 +288,6 @@ vm.component('navigation', {
             </li>
         </ul>
     </nav>
-    <slot></slot>
     `
 });
 
