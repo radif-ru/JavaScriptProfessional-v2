@@ -48,7 +48,7 @@ const vm = Vue.createApp({
         this.$nextTick(() => {
             setTimeout(() => {
                 old_main_js();
-            }, 300)
+            }, 500)
         });
     },
     // updated() {

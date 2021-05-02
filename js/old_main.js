@@ -1,6 +1,9 @@
 function old_main_js() {
     $(document).ready(() => {
 
+        //Покупка товаров перетаскиванием
+        dragAndDrop();
+
         //Корзина, shopping-cart, модули jQuery UI: автозаполнение в search, перетаскивание Drag and Drop
         let cart = new Cart('responses/getCart.json');
 
@@ -15,8 +18,6 @@ function old_main_js() {
         //Автозавершение слов (для поиска)
         autocomplete();
 
-        //Покупка товаров перетаскиванием
-        dragAndDrop();
     });
 }
 
