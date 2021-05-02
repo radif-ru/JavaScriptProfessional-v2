@@ -139,7 +139,7 @@ class GoodsList {
         });
     };
 
-    filterGoods (value) {
+    filterGoods(value) {
         const regexp = new RegExp(value, 'gmi');
         this.filter_goods = this.goods_arr.filter(good => regexp.test(good.name));
         console.log(`filter_goods ${this.filter_goods}`);

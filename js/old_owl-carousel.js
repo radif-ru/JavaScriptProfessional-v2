@@ -29,5 +29,4 @@ if ($('.owl-carousel').length !== 0) {
         range: true,
         values: [52, 400],
     })
-
 }
