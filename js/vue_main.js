@@ -45,6 +45,10 @@ const vm = Vue.createApp({
     mounted() {
         this.getData(this.products_href, 5);
         this.filteredGoods('MANGO');
+        //Изначально Vue подключался удалённо, пришлось заморочиться
+        //чтобы код из old_main_js() подгружался после загрузки DOM из Vue,
+        //теперь подключил Vue локально, можно обёртки из this.$nextTick
+        //и setTimeout удалить и код продолжит отрабатывать корректно
         this.$nextTick(() => {
             setTimeout(() => {
                 old_main_js();
