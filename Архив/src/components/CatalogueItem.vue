@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .item__info {
   margin-top: 19px;
   margin-left: 15px;
