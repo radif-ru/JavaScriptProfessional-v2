@@ -2,7 +2,7 @@
   <section class="catalogue">
     <CatalogItem v-for="(item, id) in items"
                  :key="`catalogue_item_${id}`"
-                 :img="`img_${id+1}.jgp`"
+                 :img="`./img/product${id+1}.png`"
                  :price="item.price"
                  :name="item.name"
                  @click="() => addItem(item)"/>
