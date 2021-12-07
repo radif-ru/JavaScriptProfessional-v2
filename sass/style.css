@@ -308,7 +308,6 @@ input::-webkit-input-placeholder {
 .cart:hover .cart-box {
   display: inline-block;
   overflow: auto;
-  height: 80vh;
 }
 
 .cart-flex {
@@ -2507,6 +2506,39 @@ button:hover {
     transform: translateX(0);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
+  }
+}
+@media (hover: none) {
+  .header {
+    width: fit-content !important;
+  }
+
+  .menu {
+    background: #ffffff !important;
+  }
+
+  .subscribe-box {
+    width: fit-content !important;
+  }
+
+  .footer-wrap {
+    width: fit-content !important;
+  }
+
+  .new-arrivals {
+    width: fit-content !important;
+  }
+
+  .single-form {
+    width: 1140px !important;
+  }
+
+  .women-collection-select__button_right {
+    right: -160px !important;
+  }
+
+  .new-arrivals-offer {
+    width: fit-content !important;
   }
 }
 
